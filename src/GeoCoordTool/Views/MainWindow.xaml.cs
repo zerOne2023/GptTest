@@ -1,12 +1,13 @@
 using GeoCoordTool.ViewModels;
 
-namespace GeoCoordTool.Views;
-
-public partial class MainWindow : System.Windows.Window
+namespace GeoCoordTool.Views
 {
-    public MainWindow()
+    public partial class MainWindow : System.Windows.Window
     {
-        InitializeComponent();
-        DataContext = new MainViewModel();
+        public MainWindow()
+        {
+            InitializeComponent();
+            DataContext = new MainViewModel();
+        }
     }
 }

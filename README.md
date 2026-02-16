@@ -45,7 +45,25 @@
 - `FNN` / `KTN` 固定格式输出，不包含逗号。
 - `1[0/-1]` 按面积累加标识转换为 `1` 或 `-1`。
 
-## 运行提示
+## 在 Win7 + VS2019 编译运行
 
-- 开发环境建议：Visual Studio 2022+ / .NET 8 Windows SDK。
+### 环境要求
+
+- Windows 7 SP1（建议安装 SHA-2 与平台更新补丁）。
+- Visual Studio 2019（建议 16.11 最新版本）并安装：
+  - **.NET 桌面开发**工作负载（WPF）
+  - **.NET Framework 4.8 开发工具**
 - 本项目使用 `ClosedXML` 处理 Excel。
+
+### 编译步骤
+
+1. 用 VS2019 打开 `GeoCoordTool.sln`。
+2. 首次打开时执行 NuGet 包还原（若未自动还原，可右键解决方案手动还原）。
+3. 选择 `Debug|Any CPU` 或 `Release|Any CPU`。
+4. 生成并运行（F5 / Ctrl+F5）。
+
+### 命令行构建（可选）
+
+```bash
+msbuild GeoCoordTool.sln /t:Restore,Build /p:Configuration=Release
+```
