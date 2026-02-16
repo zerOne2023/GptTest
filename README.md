@@ -49,3 +49,14 @@
 
 - 开发环境建议：Visual Studio 2022+ / .NET 8 Windows SDK。
 - 本项目使用 `ClosedXML` 处理 Excel。
+
+## SDK 故障排查（“无法找到 .NET SDK”）
+
+如果打开项目时出现“无法找到 .NET SDK，请检查 global.json 指定版本”错误，可按以下步骤排查：
+
+1. 先检查本机已安装 SDK：`dotnet --list-sdks`。
+2. 本仓库已通过 `global.json` 锁定到 `.NET 8`（`8.0.100`，允许 feature band 内向前滚动）。
+3. 若本机没有 .NET 8 SDK，请安装 **.NET 8 SDK（Windows）** 后重启 Visual Studio。
+4. 若你已安装更高 patch（如 `8.0.2xx/8.0.3xx`），通常会自动匹配；如果仍报错，可删除 VS 缓存后重新加载解决方案。
+
+> 提示：本项目目标框架为 `net8.0-windows`，仅安装 Runtime 不够，必须安装 **SDK**。
